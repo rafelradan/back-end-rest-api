@@ -10,7 +10,7 @@ app.use(express.json())
 
 
 app.get('/', (req, res) =>{
-    res.json({"messsage": "api working" })
+    res.json({messsage: "api working", version: "1.0" })
 })
 
 
