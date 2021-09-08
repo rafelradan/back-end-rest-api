@@ -1,17 +1,23 @@
 import {Sequelize} from 'sequelize'
+import {config} from 'dotenv'
 
+config()
 
 export const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './db.sqlite',
-    logging: false
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  port: 3306,
+  database: process.env.DB_NAME,
+  dialect: 'mysql',
+  logging: false,
   });
 
 
   async function connectDatabase(){
     try {
-      await sequelize.authenticate()
-      await sequelize.sync({ force: false })
+      sequelize.authenticate()
+      sequelize.sync({ force: false })
       console.log('connected to databese')
       
     } catch (error) {
