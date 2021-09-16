@@ -1,4 +1,4 @@
-import  { DataTypes, Model } from 'sequelize';
+import  { DataTypes, Model } from 'sequelize'
 import {sequelize} from '../config/dbConection'
 
 class User extends Model {}
@@ -7,7 +7,7 @@ User.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
     },
 
     name: {
