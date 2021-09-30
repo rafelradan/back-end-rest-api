@@ -12,10 +12,27 @@ User.init({
 
     name: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    cpf: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
 
     email: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
 
 }, 
@@ -26,5 +43,7 @@ User.init({
   modelName: 'users', // We need to choose the model name
   timestamps: false
 });
+
+
 
 export default User

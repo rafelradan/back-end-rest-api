@@ -31,7 +31,8 @@ async function show (req, res){
 async function update(req, res) {
     const {id} = req.params
     const {name, gender, author} = req.body
-
+    console.log({id, name, gender, author})
+    
     let book = await Books.findByPk(id)
 
     if (!book) {

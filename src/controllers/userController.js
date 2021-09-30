@@ -1,4 +1,4 @@
-import User from "../models/userModel"
+import User from '../models/userModel'
 
 
 //List all users
@@ -9,8 +9,8 @@ async function index(req, res){
 
 //Create a user
 async function create(req, res){
-    const {name, email} = req.body
-    const user = await User.create({ name, email })
+    const {name, cpf, email, city, gender} = req.body
+    const user = await User.create({ name, cpf, email, city, gender })
     return res.status(201).json(user)
 }
 
@@ -28,7 +28,7 @@ async function show(req, res){
 //Update a user
 async function update(req, res){
     const {id} = req.params
-    const {name, email} = req.body
+    const {name, cpf, email, city, gender} = req.body
 
     let user = await User.findByPk(id)
 
@@ -37,7 +37,10 @@ async function update(req, res){
     }
 
     user.name = name
+    user.cpf = cpf
     user.email = email
+    user.city = city
+    user.gender = gender
 
     await user.save()
     
