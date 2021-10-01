@@ -1,3 +1,4 @@
 /node_modules
-/estudandoJS
+/EstudandoJS
 .env
+yarn.lock
